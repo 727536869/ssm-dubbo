@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.seven.dao.ICompanyDao" >
+ <resultMap id="BaseResultMap" type="com.seven.model.CompanyUser">
+    <id column="userid" property="userid" jdbcType="INTEGER" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
+    <result column="userpwd" property="userpwd" jdbcType="VARCHAR" />
+    <result column="useremail" property="useremail" jdbcType="VARCHAR" />
+    <result column="userphone" property="userphone" jdbcType="VARCHAR" />
+  </resultMap>
+
+	<select id="selectCompanyUserWhere" parameterType="com.seven.model.CompanyUser" resultType="com.seven.model.CompanyUser">
+		select * from t_companyuser where username = #{username} and userpwd = #{userpwd}
+	</select>
+	
+	<!-- 用户名是否存在 -->
+	<select id="testCompanyRegisterName" resultType="com.seven.model.CompanyUser">
+		select * from t_companyuser sys where sys.username=#{username}
+	</select>
+	<!-- 保存用户信息 -->
+	<insert id="saveCompanyRegister" parameterType="com.seven.model.CompanyUser">
+	
+		insert into t_companyuser 
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+		<if test="username != null and username != ''">
+			username,
+		</if>
+		<if test="userpwd != null and userpwd != ''">
+			userpwd,
+		</if>
+		
+		<if test="useremail != null and useremail != ''">
+			useremail,
+		</if>
+		<if test="userphone != null and userphone != ''">
+			userphone,
+		</if>
+		
+		</trim>
+		
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="username != null and username != ''">
+			#{username},
+		</if>
+		
+		<if test="userpwd != null and userpwd != ''">
+			#{userpwd},
+		</if>
+
+		<if test="useremail != null and useremail != ''">
+			#{useremail},
+		</if>
+		
+		<if test="userphone != null and userphone != ''">
+			#{userphone},
+		</if>
+		</trim>
+	</insert>
+
+	
+	
+</mapper>
