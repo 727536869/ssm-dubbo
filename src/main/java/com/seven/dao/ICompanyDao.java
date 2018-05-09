@@ -24,39 +24,10 @@ import com.seven.model.CompanyUser;
  */
 public interface ICompanyDao {
 
-	/** <pre>selectCompanyUserWhere(这里用一句话描述这个方法的作用)   
-	 * 创建人：JavaScript  
-	 * 创建时间：2018年3月27日 下午2:27:17    
-	 * 修改人：JavaScript 
-	 * 修改时间：2018年3月27日 下午2:27:17    
-	 * 修改备注： 
-	 * @param cu
-	 * @return</pre>    
-	 */
-	CompanyUser selectCompanyUserWhere(CompanyUser cu);
 
-	/** <pre>testCompanyRegisterName(这里用一句话描述这个方法的作用)   
-	 * 创建人：刘文圣
-	 * 创建时间：2018年3月27日 下午4:52:58    
-	 * 修改人：刘文圣
-	 * 修改时间：2018年3月27日 下午4:52:58    
-	 * 修改备注： 
-	 * @param registerName
-	 * @return</pre>    
-	 */
- 
 	
 	List testCompanyRegisterName(String registerName);
 
-	/** <pre>saveCompanyRegister(这里用一句话描述这个方法的作用)   
-	 * 创建人：刘文圣
-	 * 创建时间：2018年3月27日 下午4:54:36    
-	 * 修改人：刘文圣
-	 * 修改时间：2018年3月27日 下午4:54:36    
-	 * 修改备注： 
-	 * @param companyUser</pre>    
-	 * @return 
-	 */
-	int saveCompanyRegister(CompanyUser companyUser);
+
 
 }
