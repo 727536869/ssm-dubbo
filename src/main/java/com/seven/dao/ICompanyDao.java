@@ -16,6 +16,8 @@ public interface ICompanyDao {
 
 	
 	List testCompanyRegisterName(String registerName);
+	
+	void userListquery();
 
 
 
